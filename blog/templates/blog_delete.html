@@ -1,0 +1,14 @@
+{% extends "base.html" %} {%load static %} {% block title %} Blog {%endblock%}
+{% block content%}
+<div class="bg-dark text-white" style="height: 100vh">
+  <h1 class="text-center mt-4">Are you Sure you want to delete the blog?</h1>
+
+  <div class="d-flex justify-content-center align-items-center">
+    <form method="post">
+      {%csrf_token%}
+      <button class="btn btn-danger">Delete</button>
+      <a class="btn btn-success" href="{%url 'all_blog'%}">Cancel</a>
+    </form>
+  </div>
+  <div>{%endblock%}</div>
+</div>

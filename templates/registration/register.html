@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block content %}
+<div
+  style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  "
+>
+  <div
+    style="
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #ccd5ae;
+    "
+  >
+    <h2
+      style="
+        font-weight: bold;
+
+        padding: 10px;
+        border-radius: 10px;
+        color: #fff;
+      "
+    >
+      REGISTER
+    </h2>
+
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button class="btn btn-primary" type="submit">REGISTER</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

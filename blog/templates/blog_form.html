@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% load static %} {% block title %} Blog {% endblock%}
+{% block content %}
+<div class="container">
+  <h2>{% if form.instance.pk %}Edit Blog{% else %}Create Blog{% endif %}</h2>
+
+  <form
+    method="post"
+    enctype="multipart/form-data"
+    class="form"
+    style="background-color: #ccd5ae; padding: 20px; border-radius: 10px"
+  >
+    {% csrf_token %} {{ form.as_p }}
+    <button class="btn btn-warning" type="submit">Submit</button>
+  </form>
+</div>
+{% endblock %}
